@@ -1,0 +1,35 @@
+.noteDashboard {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  height: 100%;
+}
+
+.noteDashboard h3 {
+  text-align: center;
+}
+
+.notes {
+  display: flex;
+  flex-flow: row nowrap;
+  height: 100%;
+}
+
+.noteList {
+  width: 20%;
+  border-right: 4px dotted;
+  padding: 1%;
+  align-items: center;
+}
+
+.noteList div {
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.noteDetail {
+  display: flex;
+  align-items: center;
+  width: 70%;
+  padding: 1%;
+}

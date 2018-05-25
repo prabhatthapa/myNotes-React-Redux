@@ -4,13 +4,16 @@ import { createAction, handleActions } from "redux-actions";
 // Constants
 // ------------------------------------
 export const NOTE_SELECTED = "NOTE_SELECTED";
+export const ADD_NOTE = "ADD_NOTE";
 // ------------------------------------
 // Actions
 // ------------------------------------
 export const activeNote = createAction(NOTE_SELECTED);
+export const addNote = createAction(ADD_NOTE);
 
 export const actions = {
-  activeNote
+  activeNote,
+  addNote
 };
 
 // ------------------------------------
@@ -48,6 +51,12 @@ const notes = handleActions(
       return {
         ...state,
         activeNote: action.payload
+      };
+    },
+    ADD_NOTE: (state = initialState, action) => {
+      return {
+        ...state,
+        allNotes: [...state.allNotes, action.payload]
       };
     }
   },

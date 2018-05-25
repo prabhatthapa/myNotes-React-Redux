@@ -33,3 +33,11 @@
   width: 70%;
   padding: 1%;
 }
+
+.addNote{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 1%;
+}

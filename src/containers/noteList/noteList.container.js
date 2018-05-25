@@ -1,11 +1,10 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import selectNote from "../../actionCreators/selectNote.action";
 import { bindActionCreators } from "redux";
+import { selectNote } from "../../actionCreators/note.action";
 
 class NoteList extends Component {
   renderList() {
-    console.log("Check Props", this.props);
     return this.props.notes.map(note => {
       return (
         <li
@@ -23,9 +22,6 @@ class NoteList extends Component {
       <div>
         <div>
           <ul className="list-group col-sm-4">{this.renderList()}</ul>
-        </div>
-        <div>
-          <button>Add New</button>
         </div>
       </div>
     );

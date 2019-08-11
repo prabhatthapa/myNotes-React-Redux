@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import NoteList from "../noteList/noteList.container";
 import NoteDetail from "../noteDetail/noteDetail.container";
 
@@ -9,7 +10,10 @@ class Home extends Component {
     return (
       <div className="noteDashboard">
         <div>
-          <h3>Note List</h3>
+          <h3>Notes</h3>
+        </div>
+        <div>
+          <Link to="/create">Create Note</Link>
         </div>
         <div className="notes">
           <div className="noteList">

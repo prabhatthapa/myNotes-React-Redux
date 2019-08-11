@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
+import { withRouter } from "react-router-dom";
 import { addNote } from "../../actionCreators/note.action";
 
 class AddNote extends Component {
@@ -9,6 +10,7 @@ class AddNote extends Component {
     const { title, detail } = e.target;
     const newNote = { title: title.value, detail: detail.value };
     this.props.addNote(newNote);
+    this.props.history.push("/");
   };
 
   render() {
@@ -44,4 +46,9 @@ function mapDispatchToProps(dispatch) {
   return bindActionCreators({ addNote: addNote }, dispatch);
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(AddNote);
+export default withRouter(
+  connect(
+    mapStateToProps,
+    mapDispatchToProps
+  )(AddNote)
+);

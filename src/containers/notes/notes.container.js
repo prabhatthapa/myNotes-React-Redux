@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import NoteList from "../noteList/noteList.container";
-import NoteDetail from "../noteDetail/noteDetail.container";
+import NoteDetail from "../../components/noteDetail/noteDetail.container";
 
 import "./notes.css";
 

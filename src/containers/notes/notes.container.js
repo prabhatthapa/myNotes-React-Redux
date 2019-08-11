@@ -1,12 +1,14 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import { connect } from "react-redux";
 import NoteList from "../noteList/noteList.container";
 import NoteDetail from "../noteDetail/noteDetail.container";
 
-import "./home.css";
+import "./notes.css";
 
-class Home extends Component {
+class Notes extends Component {
   render() {
+    const { activeNote } = this.props.notes;
     return (
       <div className="noteDashboard">
         <div>
@@ -20,7 +22,7 @@ class Home extends Component {
             <NoteList />
           </div>
           <div className="noteDetail">
-            <NoteDetail />
+            <NoteDetail activeNote={activeNote} />
           </div>
         </div>
       </div>
@@ -28,4 +30,10 @@ class Home extends Component {
   }
 }
 
-export default Home;
+function mapStateToProps(state) {
+  return {
+    notes: state.notes
+  };
+}
+
+export default connect(mapStateToProps)(Notes);

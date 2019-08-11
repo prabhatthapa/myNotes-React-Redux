@@ -1,24 +1,18 @@
-import React, { Component } from "react";
-import { connect } from "react-redux";
+import React from "react";
 
-class NoteDetail extends Component {
-  render() {
-    if (!this.props.note) {
-      return <div>Click one of the title to see note.</div>;
-    }
-    return (
-      <div>
-        <h4>Title - {this.props.note.title}</h4>
-        <p>{this.props.note.detail}</p>
-      </div>
-    );
+const activeNote = props => {
+  const { activeNote } = props;
+
+  if (!activeNote) {
+    return <div>Click one of the title to see note.</div>;
   }
-}
 
-function mapStateToProps(state) {
-  return {
-    note: state.notes.activeNote
-  };
-}
+  return (
+    <div>
+      <h4>Title - {activeNote.title}</h4>
+      <p>{activeNote.detail}</p>
+    </div>
+  );
+};
 
-export default connect(mapStateToProps)(NoteDetail);
+export default activeNote;
